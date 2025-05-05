@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RFC822 Email Validator!</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #0d0d0d;
+      color: #33ff33;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 30px 25px;
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      color: #00ff00;
+      font-size: 1.8em;
+      margin: 0;
+    }
+
+    .input-section {
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1em;
+      color: #aaffaa;
+    }
+
+    input[type="text"], button {
+      padding: 12px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      box-sizing: border-box;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      background-color: #2b2b2b;
+      color: #00ff00;
+      border: 1px solid #00ff00;
+      margin-bottom: 15px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #00ff00;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      border: 1px solid #0f0;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #00cc00;
+    }
+
+    .result {
+      margin-top: 25px;
+      padding: 18px;
+      text-align: center;
+      border-radius: 6px;
+      border: 1px solid #00ff00;
+      background-color: #252525;
+      box-shadow: 0 0 8px rgba(0, 255, 0, 0.25);
+      font-size: 1.1em;
+      min-height: 50px;
+    }
+
+    .valid {
+      color: #00ff00;
+    }
+
+    .invalid {
+      color: #ff4444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>RFC822 Email Validator🔥</h1>
+    </header>
+    <div class="input-section">
+      <label for="emailInput">Enter Email Address:</label>
+      <input type="text" id="emailInput" placeholder="example@domain.com" />
+      <button onclick="validateEmail()">Validate Email</button>
+    </div>
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    // Exact RFC822 regex from your Python script (converted to JS syntax)
+    const RFC822_REGEX = new RegExp(
+      "^(?:[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+" +
+      "(?:\\.[a-zA-Z0-9!#$%&'*+/=?^_`{|}~-]+)*" +
+      '|"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]' +
+      '|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*")' +
+      "@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?" +
+      "(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)$"
+    );
+
+function validateEmail() {
+  const email = document.getElementById('emailInput').value.trim();
+  const resultDiv = document.getElementById('result');
+
+  if (RFC822_REGEX.test(email) && email.split('@')[1].includes('.')) {
+    resultDiv.innerHTML = '<span class="valid">✅ RFC822 valid: YES</span>';
+  } else {
+    resultDiv.innerHTML = '<span class="invalid">❌ RFC822 valid: NO</span>';
+  }
+}
+
+  </script>
+</body>
+</html>
