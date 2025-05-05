@@ -34,5 +34,7 @@ ibro%27%22%3E%3Cscript%20src%3Dhttps%3A%2F%2Fxss0r.com%2Fc%2Fbrocode%3E%3C%2Fscr
 
 Great for detecting weaknesses in forms, input sanitization, or frontend validation logic.
 
+![RFC822 Email Validator](https://github.com/0xlipon/RFC822-Email-Validator/blob/main/RFC822.png?raw=true)
+
 # Inspired By
 Inspired by @coffinxp/RFC822-Email-Validator — now redefined for the web.
