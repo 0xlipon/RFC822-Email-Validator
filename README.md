@@ -1,5 +1,5 @@
 # RFC822 Email Validator
-A sleek, browser-based tool for validating email addresses against the RFC822 standard. Built with HTML, CSS, and JavaScript — perfect for quick manual checks, demos, or client-side validation testing.
+Sleek UI, lightning-fast validation, powered by HTML, CSS, and JavaScript. Get instant results with zero hassle.
 
 # Security Testing
 Use this tool to test how email input fields handle potentially dangerous strings. Example payloads:
