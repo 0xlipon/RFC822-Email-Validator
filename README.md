@@ -37,4 +37,4 @@ Great for detecting weaknesses in forms, input sanitization, or frontend validat
 ![RFC822 Email Validator](https://github.com/0xlipon/RFC822-Email-Validator/blob/main/RFC822.png?raw=true)
 
 # Inspired By
-Inspired by @coffinxp/RFC822-Email-Validator — now redefined for the web.
+Inspired by `@coffinxp/RFC822-Email-Validator` — now redefined for the web.
